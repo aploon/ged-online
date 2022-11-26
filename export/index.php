@@ -15,6 +15,8 @@ $snappy->setOption('enable-local-file-access', true);
 
 $snappy->setOption('title', "Document");
 
+$src = __ROOT__.'/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64';
+
 // html content
 $htmlTemplate = <<<HTML
     <table dir="ltr"
@@ -4287,6 +4289,8 @@ $htmlTemplate = <<<HTML
             </tr>
         </tbody>
     </table>
+
+    <h1>$src</h1>
 
     <br><br><br><br><br>
 
