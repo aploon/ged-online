@@ -1,22 +1,15 @@
 <?php
-define('__ROOT__', dirname(dirname(__FILE__)));
-require_once(__ROOT__.'/vendor/autoload.php');
-// require_once($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/autoload.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
 
 use Knp\Snappy\Pdf;
 
-// $snappy = new Pdf('lib/wkhtmltopdf/bin/wkhtmltopdf');
-$snappy = new Pdf(__ROOT__.'/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
-// $snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
+$snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
 
 $snappy->setOption('encoding', 'UTF-8');
 $snappy->setOption('image-quality', 100);
 $snappy->setOption('enable-local-file-access', true);
 
 $snappy->setOption('title', "Document");
-
-$src = __ROOT__.'/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64';
-$src_hold = $_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64';
 
 // html content
 $htmlTemplate = <<<HTML
@@ -4290,9 +4283,6 @@ $htmlTemplate = <<<HTML
             </tr>
         </tbody>
     </table>
-
-    <h1>$src</h1>
-    <h1>$src_hold</h1>
 
     <br><br><br><br><br>
 
