@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function subst() {
+            var vars = {};
+            var query_strings_from_url = document.location.search.substring(1).split('&');
+            for (var query_string in query_strings_from_url) {
+                if (query_strings_from_url.hasOwnProperty(query_string)) {
+                    var temp_var = query_strings_from_url[query_string].split('=', 2);
+                    vars[temp_var[0]] = decodeURI(temp_var[1]);
+                }
+            }
+            var css_selector_classes = ['page', 'frompage', 'topage', 'webpage', 'section', 'subsection', 'date', 'isodate', 'time', 'title', 'doctitle', 'sitepage', 'sitepages'];
+            for (var css_class in css_selector_classes) {
+                if (css_selector_classes.hasOwnProperty(css_class)) {
+                    var element = document.getElementsByClassName(css_selector_classes[css_class]);
+                    for (var j = 0; j < element.length; ++j) {
+                        element[j].textContent = vars[css_selector_classes[css_class]];
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-footer{
+            line-height: 1.7;
+            text-align: center;
+
+            font-size: 9pt;
+            font-family: 'Times New Roman';
+            color: #000000;
+            background-color: transparent;
+            font-weight: 400;
+            font-style: normal;
+            font-variant: normal;
+
+            /* padding: 0px 175px 0px 75px; */
+            vertical-align: center;
+        }
+    </style>
+</head>
+
+<body style="border:0; margin: 0;" onload="subst()">
+    <!-- Footer without compagny info -->
+
+    <div style="height: 15px;"></div>
+    <table style="border-top: 1px solid black; width: 100%;">
+        <tr>
+            <td class="section"></td>
+            <td style="text-align:right">
+                Page <span class="page"></span> sur <span class="topage"></span>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Footer with compagny info -->
+
+    <!-- <div style="height: 95px;"></div>
+    <table style="width: 100%;">
+        <tr>
+            <td>
+                <img style="position: absolute; top: 75px; left: 0; width: 90px;" src="../../../../../assets/media/logos/footer_elyon1.png" alt="">
+            </td>
+            <td>
+                <div class="text-footer">
+                    RCCM: 10 B 6915,   IFU: 3 201 002 064 114, 09 BP 290 Saint Michel <br>
+                    Tél. + (229) 21 32 77 78/21 03 35 32/ 90 94 07 99/97 22 19 85, Email: c_elyon@yahoo.fr <br>
+                    Référence bancaire: B 067 01502 502 09 000 2240 RIB (83) UBA CNSS N° : 11436690 <br>
+                </div>
+            </td>
+            <td>
+                <img style="position: absolute; top: 75px; right: 0; width: 175px;" src="../../../../../assets/media/logos/footer_elyon2.png" alt="">
+            </td>
+        </tr>
+    </table> -->
+</body>
+
+</html>
