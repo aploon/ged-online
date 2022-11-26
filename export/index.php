@@ -1,16 +1,16 @@
 <?php
-require_once('vendor/autoload.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/autoload.php');
 
 use Knp\Snappy\Pdf;
 
 // $snappy = new Pdf('lib/wkhtmltopdf/bin/wkhtmltopdf');
-$snappy = new Pdf('vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
+$snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
 
 $snappy->setOption('encoding', 'UTF-8');
 $snappy->setOption('image-quality', 100);
 $snappy->setOption('enable-local-file-access', true);
 
-$snappy->setOption('title', $result['titre_document']);
+$snappy->setOption('title', "Document");
 
 // html content
 $htmlTemplate = <<<HTML
