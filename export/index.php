@@ -1,10 +1,11 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/autoload.php');
-
-use Knp\Snappy\Pdf;
 
 var_dump($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
 die;
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/autoload.php');
+
+use Knp\Snappy\Pdf;
 
 // $snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/lib/wkhtmltopdf/bin/wkhtmltopdf');
 $snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
