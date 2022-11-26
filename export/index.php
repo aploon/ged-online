@@ -3,10 +3,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/autoload.php');
 
 use Knp\Snappy\Pdf;
 
-die;
-
 // $snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/lib/wkhtmltopdf/bin/wkhtmltopdf');
-$snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/ged/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
+$snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
 
 $snappy->setOption('encoding', 'UTF-8');
 $snappy->setOption('image-quality', 100);
