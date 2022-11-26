@@ -1,4 +1,5 @@
 <?php
+die;
 require_once($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/autoload.php');
 
 use Knp\Snappy\Pdf;
