@@ -1,6 +1,6 @@
 <?php
 
-var_dump($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
+var_dump(require_once($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/autoload.php'));
 die;
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/autoload.php');
