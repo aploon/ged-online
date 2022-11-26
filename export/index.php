@@ -3,8 +3,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
 
 use Knp\Snappy\Pdf;
 
-$snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/lib/wkhtmltox/bin/wkhtmltopdf');
-// $snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
+$snappy = new Pdf($_SERVER['DOCUMENT_ROOT'] . '/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64');
 
 $snappy->setOption('encoding', 'UTF-8');
 $snappy->setOption('image-quality', 100);
