@@ -16,6 +16,7 @@ $snappy->setOption('enable-local-file-access', true);
 $snappy->setOption('title', "Document");
 
 $src = __ROOT__.'/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64';
+$src_hold = $_SERVER['DOCUMENT_ROOT'] . '/ged-pdf/vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64';
 
 // html content
 $htmlTemplate = <<<HTML
@@ -4291,6 +4292,7 @@ $htmlTemplate = <<<HTML
     </table>
 
     <h1>$src</h1>
+    <h1>$src_hold</h1>
 
     <br><br><br><br><br>
 
