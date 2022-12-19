@@ -10,6 +10,7 @@
     <h1>Bienvenu sur l'app de test du logiciel GED-ELYON</h1>
     <ul>
         <li class="export"><a href="export" target="_blank">Exportation en pdf</a></li>
+        <li class="mailer"><a href="mailer" target="_blank">Service de mailling</a></li>
     </ul>
 </body>
 </html>
