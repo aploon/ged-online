@@ -154,9 +154,9 @@ $opts = array(
 			'URL'           => dirname($_SERVER['PHP_SELF']) . '/../files/', // URL to files (REQUIRED)
 			'trashHash'     => 't1_Lw',                     // elFinder's hash of trash folder
 			'winHashFix'    => DIRECTORY_SEPARATOR !== '/', // to make hash same to Linux one on windows too
-			'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
-			'uploadAllow'   => array('image/x-ms-bmp', 'image/gif', 'image/jpeg', 'image/png', 'image/x-icon', 'text/plain'), // Mimetype `image` and `text/plain` allowed to upload
-			'uploadOrder'   => array('deny', 'allow'),      // allowed Mimetype `image` and `text/plain` only
+			// 'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
+			'uploadAllow'   => array('all'), // All Mimetypes allowed to upload
+			'uploadOrder'   => array('deny', 'allow'),      // allowed all Mimetypes
 			'accessControl' => 'access'                     // disable and hide dot starting files (OPTIONAL)
 		),
 		// Trash volume
@@ -166,13 +166,44 @@ $opts = array(
 			'path'          => '../files/.trash/',
 			'tmbURL'        => dirname($_SERVER['PHP_SELF']) . '/../files/.trash/.tmb/',
 			'winHashFix'    => DIRECTORY_SEPARATOR !== '/', // to make hash same to Linux one on windows too
-			'uploadDeny'    => array('all'),                // Recomend the same settings as the original volume that uses the trash
-			'uploadAllow'   => array('image/x-ms-bmp', 'image/gif', 'image/jpeg', 'image/png', 'image/x-icon', 'text/plain'), // Same as above
+			// 'uploadDeny'    => array('all'),                // Recomend the same settings as the original volume that uses the trash
+			'uploadAllow'   => array('all'), // Same as above
 			'uploadOrder'   => array('deny', 'allow'),      // Same as above
 			'accessControl' => 'access',                    // Same as above
 		),
 	)
 );
+
+// // Thumbnail settings for cloud volumes
+// $tmbConfig = array(
+//     'tmbPath'          => '../files/.tmbCloud',
+//     'tmbURL'           => dirname($_SERVER['PHP_SELF']) . '/../files/.tmbCloud/',
+//     'tmbGcMaxlifeHour' => 2160, // 90 days
+//     'tmbGcPercentage'  => 5,    // 5 execute / 100 tmb querys
+// ); 
+
+// // MySQL config
+// $mySqlConfig = array(
+//     'path'          => 1,
+//     'host'          => 'localhost',
+//     'user'          => 'elfinder',    // @String DB user name
+//     'pass'          => '5551666',    // @String DB user password
+//     'db'            => 'elfinder',    // @String Database name
+//     'uploadMaxSize' => '10M', // It should be less than "max_allowed_packet" value of MySQL setting
+// );
+// // MySQL volume
+// $opts['roots'][] = array_merge($tmbConfig, $mySqlConfig, array(
+//     'driver'        => 'MySQL',
+//     'trashHash'     => 'tm1_MQ', // set trash to MySQL trash (tm1_) 1 (MQ)
+//     'files_table'   => 'elfinder_file',
+// ));
+// // MySQL trash volume
+// $opts['roots'][] = array_merge($tmbConfig, $mySqlConfig, array(
+//     'id'            => '1', // volume id became "tm1_"
+//     'alias'         => 'DB Trash',
+//     'driver'        => 'TrashMySQL',
+//     'files_table'   => 'elfinder_trash',
+// ));
 
 // run elFinder
 $connector = new elFinderConnector(new elFinder($opts));
