@@ -11,7 +11,7 @@
     <ul>
         <li class="export" style="margin-bottom: 10px;"><a href="export" target="_blank">Exportation en pdf</a></li>
         <li class="mailer" style="margin-bottom: 10px;"><a href="mailer" target="_blank">Service de mailling</a></li>
-        <li class="elfinder/elfinder.html" style="margin-bottom: 10px;"><a href="elfinder" target="_blank">Gestionnaire de fichiers</a></li>
+        <li class="elfinder" style="margin-bottom: 10px;"><a href="elfinder/elfinder.html" target="_blank">Gestionnaire de fichiers</a></li>
     </ul>
 </body>
 </html>
