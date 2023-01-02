@@ -1,5 +1,5 @@
 # ignpre all files in the vendor directory
 /vendor
 
-# ignore all files in elfinder/files
+# ignore all files in elfinder/files directory
 /elfinder/files
