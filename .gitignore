@@ -2,4 +2,4 @@
 /vendor
 
 # ignore all files in elfinder/files directory
-/elfinder/files
+# /elfinder/files
