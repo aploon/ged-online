@@ -1,5 +1,7 @@
 # ignpre all files in the vendor directory
 /vendor
 
-# ignore all files in elfinder/files directory
-/elfinder/files
+# ignore all files in elfinder/files directory but not .gitkeep
+# /elfinder/files/*
+# !/elfinder/files/.gitkeep
+# !/elfinder/files/.trash/.gitkeep
