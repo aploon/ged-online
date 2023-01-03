@@ -159,11 +159,11 @@ $opts = array(
 			'uploadOrder'   => array('deny', 'allow'),      // allowed all Mimetypes
 			'accessControl' => 'access',                     // disable and hide dot starting files (OPTIONAL)
 			'attributes'    => array(                       // additional thumbnail directories
-								'pattern' => '~^/\.tmb(?:Cloud|Netmount)$~',
-								'read'    => false,
+								'pattern' => '/^.+/',
+								'read'    => true,
 								'write'   => false,
-								'locked'  => true,
-								'hidden'  => true ),
+								'locked'  => false,
+								'hidden'  => false ),
 		),
 		// Trash volume
 		array(
@@ -176,12 +176,12 @@ $opts = array(
 			'uploadAllow'   => array('all'), // Same as above
 			'uploadOrder'   => array('deny', 'allow'),      // Same as above
 			'accessControl' => 'access',                    // Same as above
-			'attributes'    => array(                       // additional thumbnail directories
-								'pattern' => '~^/\.tmb(?:Cloud|Netmount)$~',
-								'read'    => false,
+			'attributes'    => array(                       // additional all directories and files
+								'pattern' => '/^.+/',
+								'read'    => true,
 								'write'   => false,
-								'locked'  => true,
-								'hidden'  => true ),
+								'locked'  => false,
+								'hidden'  => false ),
 		),
 	)
 );
