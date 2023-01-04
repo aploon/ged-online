@@ -158,18 +158,30 @@ $opts = array(
 			'uploadAllow'   => array('all'), // All Mimetypes allowed to upload
 			'uploadOrder'   => array('deny', 'allow'),      // allowed all Mimetypes
 			'accessControl' => 'access',                     // disable and hide dot starting files (OPTIONAL)
+			'attributes'    => array(                       // additional thumbnail directories
+								'pattern' => '~^/\.tmb(?:Cloud|Netmount)$~',
+								'read'    => false,
+								'write'   => false,
+								'locked'  => true,
+								'hidden'  => true ),
 		),
 		// Trash volume
 		array(
 			'id'            => '1',
 			'driver'        => 'Trash',
 			'path'          => '../files/.trash/',
-			'tmbURLchmo'        => dirname($_SERVER['PHP_SELF']) . '/../files/.trash/.tmb/',
+			'tmbURL'        => dirname($_SERVER['PHP_SELF']) . '/../files/.trash/.tmb/',
 			'winHashFix'    => DIRECTORY_SEPARATOR !== '/', // to make hash same to Linux one on windows too
 			// 'uploadDeny'    => array('all'),                // Recomend the same settings as the original volume that uses the trash
 			'uploadAllow'   => array('all'), // Same as above
 			'uploadOrder'   => array('deny', 'allow'),      // Same as above
 			'accessControl' => 'access',                    // Same as above
+			'attributes'    => array(                       // additional thumbnail directories
+								'pattern' => '~^/\.tmb(?:Cloud|Netmount)$~',
+								'read'    => false,
+								'write'   => false,
+								'locked'  => true,
+								'hidden'  => true ),
 		),
 	)
 );
