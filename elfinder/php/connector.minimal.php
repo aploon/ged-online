@@ -158,12 +158,6 @@ $opts = array(
 			'uploadAllow'   => array('all'), // All Mimetypes allowed to upload
 			'uploadOrder'   => array('deny', 'allow'),      // allowed all Mimetypes
 			'accessControl' => 'access',                     // disable and hide dot starting files (OPTIONAL)
-			'attributes'    => array(                       // additional thumbnail directories
-								'pattern' => '/\.js$/',
-								'read'    => false,
-								'write'   => false,
-								'locked'  => true,
-								'hidden'  => false ),
 		),
 		// Trash volume
 		array(
@@ -176,12 +170,6 @@ $opts = array(
 			'uploadAllow'   => array('all'), // Same as above
 			'uploadOrder'   => array('deny', 'allow'),      // Same as above
 			'accessControl' => 'access',                    // Same as above
-			'attributes'    => array(                       // additional thumbnail directories
-								'pattern' => '~^/root$~',
-								'read'    => false,
-								'write'   => false,
-								'locked'  => true,
-								'hidden'  => false ),
 		),
 	)
 );
