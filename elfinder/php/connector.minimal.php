@@ -163,7 +163,7 @@ $opts = array(
 								'read'    => false,
 								'write'   => false,
 								'locked'  => true,
-								'hidden'  => true ),
+								'hidden'  => false ),
 		),
 		// Trash volume
 		array(
@@ -181,7 +181,7 @@ $opts = array(
 								'read'    => false,
 								'write'   => false,
 								'locked'  => true,
-								'hidden'  => true ),
+								'hidden'  => false ),
 		),
 	)
 );
